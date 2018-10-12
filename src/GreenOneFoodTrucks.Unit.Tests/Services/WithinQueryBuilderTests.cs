@@ -29,7 +29,7 @@ namespace GreenOneFoodTrucks.Unit.Tests.Services
         }
 
         [Test]
-        public void IsValid_Given_Only_Longitude_When_IsValid_Then_ReturnFalse()
+        public void IsValid_Given_Only_Longitude_When_IsValid_Then_ReturnFalse_Test()
         {
             //given
             IOptions<AppSettings> appSettings = Options.Create(new AppSettings());
@@ -43,7 +43,7 @@ namespace GreenOneFoodTrucks.Unit.Tests.Services
         }
 
         [Test]
-        public void IsValid_Given_Correct_Parameters_When_IsValid_Then_ReturnTrue()
+        public void IsValid_Given_Correct_Parameters_When_IsValid_Then_ReturnTrue_Test()
         {
             //given
             IOptions<AppSettings> appSettings = Options.Create(new AppSettings());
@@ -57,7 +57,7 @@ namespace GreenOneFoodTrucks.Unit.Tests.Services
         }
 
         [Test]
-        public void Build_Given_Correct_Parameters_When_Build_Then_ReturnCorrectQuery()
+        public void Build_Given_Correct_Parameters_When_Build_Then_ReturnCorrectQuery_Test()
         {
             //given
             const string query = "within_circle(location, 37.7678524427181, -122.416104892532, 500)";
