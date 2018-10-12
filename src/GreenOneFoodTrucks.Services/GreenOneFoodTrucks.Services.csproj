@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="SodaClientService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="CSM.SodaDotNet" Version="0.8.0" />
     <PackageReference Include="Lamar.Microsoft.DependencyInjection" Version="1.1.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.0.0" />
