@@ -16,10 +16,18 @@ namespace GreenOneFoodTrucks.Web.Api.Controllers
 
         [HttpGet]
         [Route("api/foodtrucks/latitude/{latitude}/longitude/{longitude}")]
-        public IEnumerable<FoodTruck> Get(double latitude, double longitude)
+        public ActionResult Get(double latitude, double longitude)
         {
-            var results = _sodaService.GetFoodTrucks(new Coordinate(latitude, longitude));
-            return results;
+            try
+            {
+                var results = _sodaService.GetFoodTrucks(new Coordinate(latitude, longitude));
+                return Ok(results);
+            }
+            catch (System.Exception ex)
+            {
+                //log error
+                return StatusCode(500);
+            }
         }
     }
 }
