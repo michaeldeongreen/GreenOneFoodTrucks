@@ -1,7 +1,6 @@
 ﻿using GreenOneFoodTrucks.Services.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using GreenOneFoodTrucks.Common.Interfaces;
 using GreenOneFoodTrucks.Domain;
 using GreenOneFoodTrucks.Common;
@@ -14,6 +13,8 @@ namespace GreenOneFoodTrucks.Services
         private readonly IAppSettingsManager _appSettingsManager;
         private readonly QueryType _queryType;
         private IEnumerable<FieldFilter> _fieldFilters;
+        private const string LatitudeFieldName = "latitude";
+        private const string LongitudeFieldName = "longitude";
 
         public WithinQueryBuilder(IAppSettingsManager appSettingsManager)
         {
@@ -23,12 +24,19 @@ namespace GreenOneFoodTrucks.Services
 
         public string Build(IEnumerable<FieldFilter> fieldFilters)
         {
+            const string location = "location";
+
             if (!IsValid(fieldFilters))
                 throw new ArgumentException("One or more field filter parameters is invalid");
 
-
             _fieldFilters = fieldFilters;
-            return string.Empty;
+
+            FieldFilter latitude = _fieldFilters.Where(n => string.Equals(n.Name, LatitudeFieldName, StringComparison.OrdinalIgnoreCase)).SingleOrDefault();
+            FieldFilter longitude = _fieldFilters.Where(n => string.Equals(n.Name, LongitudeFieldName, StringComparison.OrdinalIgnoreCase)).SingleOrDefault();
+
+            string query = $"within_circle({location}, {latitude.Value}, {longitude.Value}, {_appSettingsManager.AppSettings.Value.RadiusOfCentralCoordinateInMeters})";
+
+            return query;
         }
 
         public bool IsQueryType(QueryType queryType)
@@ -38,12 +46,9 @@ namespace GreenOneFoodTrucks.Services
 
         public bool IsValid(IEnumerable<FieldFilter> fieldFilters)
         {
-            const string latitudeField = "latitude";
-            const string longitudeField = "longitude";
-
             if (fieldFilters == null || fieldFilters.Count() != 2 ||
-                fieldFilters.Where(n => string.Equals(n.Name, latitudeField, StringComparison.OrdinalIgnoreCase)).Count() == 0 ||
-                fieldFilters.Where(n => string.Equals(n.Name, longitudeField, StringComparison.OrdinalIgnoreCase)).Count() == 0 ||
+                fieldFilters.Where(n => string.Equals(n.Name, LatitudeFieldName, StringComparison.OrdinalIgnoreCase)).Count() == 0 ||
+                fieldFilters.Where(n => string.Equals(n.Name, LongitudeFieldName, StringComparison.OrdinalIgnoreCase)).Count() == 0 ||
                 fieldFilters.Where(n => String.IsNullOrEmpty(n.Value)).Count() > 0
                 )
                 return false;

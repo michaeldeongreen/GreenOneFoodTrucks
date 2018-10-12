@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Lamar;
 using GreenOneFoodTrucks.Common;
 using GreenOneFoodTrucks.Services;
+using GreenOneFoodTrucks.Services.Interfaces;
 
 namespace GreenOneFoodTrucks.Web.Api
 {
@@ -31,6 +32,7 @@ namespace GreenOneFoodTrucks.Web.Api
                 s.AssemblyContainingType<CommonRegistry>();
                 s.AssemblyContainingType<ServicesRegistry>();
                 s.AssemblyContainingType<DefaultRegistry>();
+                s.AddAllTypesOf<IQueryBuilder>();
             });
         }
 

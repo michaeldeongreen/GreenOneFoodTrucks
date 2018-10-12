@@ -1,7 +1,10 @@
-﻿namespace GreenOneFoodTrucks.Services.Interfaces
+﻿using GreenOneFoodTrucks.Domain;
+using System.Collections.Generic;
+
+namespace GreenOneFoodTrucks.Services.Interfaces
 {
     public interface ISodaService
     {
-        int GetFoodTrucks(string url);
+        IEnumerable<FoodTruck> GetFoodTrucks(Coordinate coordinate);
     }
 }
