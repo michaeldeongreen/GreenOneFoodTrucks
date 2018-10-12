@@ -59,7 +59,7 @@ This library is used to provide domain objects that are used throughout the appl
 <ul>
 	<li>Coordinates - Object is used to capture the Latitude and Longitude values the consumer has passed to the REST API</li>
 	<li>FieldFilter - Object is used to hold the field name/field value that the consumer has passed to the REST API</li>
-	<li>FoodTruck - Object is used to deserialize the object that is returned from the SODA.Net API when querying the San Francisco Food Truck API<li>
+	<li>FoodTruck - Object is used to deserialize the object that is returned from the SODA.Net API when querying the San Francisco Food Truck API</li>
 </ul>
 
 
