@@ -2,7 +2,7 @@
 
 namespace GreenOneFoodTrucks.Common.Interfaces
 {
-    public interface IConfigurationManagerWrapper
+    public interface IAppSettingsManager
     {
         IOptions<AppSettings> AppSettings { get; }
     }
