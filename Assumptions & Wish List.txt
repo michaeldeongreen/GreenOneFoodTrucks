@@ -1,0 +1,8 @@
+Assumptions:
+* Wanted to receive Food Trucks in a certain radius
+
+Wishes:
+* Should have used .Net Core 2.1
+* .Net Core 2.0 doesn't allow for ActionResult<T>, so no Try/Catch around Controller
+* Implementing Paging
+* Should have used async/wait
