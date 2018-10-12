@@ -3,8 +3,8 @@ GreenOneFoodTrucks is an REST API that consumes the City of San Francisco's open
 
 
 <h1>How to Consume</h1>
-Currently, the GreenOneFoodTrucks REST API exposes 1 End Point.  The End Point is located at: <i>Domain.com/api/foodtrucks/latitude/{value}/longitude/{value}</i>.  Example: <Br>
-domain.com/api/foodtrucks/latitude/37.7678524427181/longitude/-122.416104892532
+Currently, the GreenOneFoodTrucks REST API exposes 1 End Point.  The End Point is located at: <b><i>http://mydomain.com/api/foodtrucks/latitude/{value}/longitude/{value}</i></b>.  <Br><Br>Example: <Br>
+http://mydomain.com/api/foodtrucks/latitude/37.7678524427181/longitude/-122.416104892532
 
 
 
@@ -49,16 +49,16 @@ GreenOneFoodTrucks has some preset application settings below is a list of the a
 <h1>GreenOneFoodTrucks.Common</h1>
 This library is used to provide common objects that are used throughout the application. <br>
 <ul>
-	<li>AppSettings - Object is used to encapsulate all of the application settings in the app.{environment}.json file<li>
-	<li>AppSettingsManager - Object is used to access the AppSettings object<li>
+	<li>AppSettings - Object is used to encapsulate all of the application settings in the app.{environment}.json file</li>
+	<li>AppSettingsManager - Object is used to access the AppSettings object</li>
 </ul>
 
 
 <h1>GreenOneFoodTrucks.Domain</h1>
 This library is used to provide domain objects that are used throughout the application. <br>
 <ul>
-	<li>Coordinates - Object is used to capture the Latitude and Longitude values the consumer has passed to the REST API<li>
-	<li>FieldFilter - Object is used to hold the field name/field value that the consumer has passed to the REST API<li>
+	<li>Coordinates - Object is used to capture the Latitude and Longitude values the consumer has passed to the REST API</li>
+	<li>FieldFilter - Object is used to hold the field name/field value that the consumer has passed to the REST API</li>
 	<li>FoodTruck - Object is used to deserialize the object that is returned from the SODA.Net API when querying the San Francisco Food Truck API<li>
 </ul>
 
@@ -66,7 +66,7 @@ This library is used to provide domain objects that are used throughout the appl
 <h1>GreenOneFoodTrucks.Services</h1>
 This library is used to expose services that contain domain logic that is used by the REST API. <br>
 <ul>
-	<li>SodaService - Service is used as a wrapper around the SODA.Net web client<li>
-	<li>WithinQueryBuilder - Service implements IQueryBuilder and is used to build the query that will be submitted to the SODA.Net web client<li>
-	<li>FoodTruck - Object is used to deserialize the object that is returned from the SODA.Net API when querying the San Francisco Food Truck API<li>
+	<li>SodaService - Service is used as a wrapper around the SODA.Net web client</li>
+	<li>WithinQueryBuilder - Service implements IQueryBuilder and is used to build the query that will be submitted to the SODA.Net web client</li>
+	<li>FoodTruck - Object is used to deserialize the object that is returned from the SODA.Net API when querying the San Francisco Food Truck API</li>
 </ul>
