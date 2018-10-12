@@ -1,7 +1,5 @@
-﻿using Lamar;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using GreenOneFoodTrucks.Services.Interfaces;
+using Lamar;
 
 namespace GreenOneFoodTrucks.Services
 {
@@ -12,6 +10,7 @@ namespace GreenOneFoodTrucks.Services
             Scan(scan => {
                 scan.TheCallingAssembly();
                 scan.WithDefaultConventions();
+                scan.AddAllTypesOf<IQueryBuilder>();
             });
         }
     }

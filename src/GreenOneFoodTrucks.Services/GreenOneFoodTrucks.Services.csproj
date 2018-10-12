@@ -5,6 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Interfaces\IBuildQuery.cs" />
+    <Compile Remove="Interfaces\IQueryBuilderService.cs" />
     <Compile Remove="SodaClientService.cs" />
   </ItemGroup>
 

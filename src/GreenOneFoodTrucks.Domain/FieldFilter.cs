@@ -1,10 +1,10 @@
 ﻿namespace GreenOneFoodTrucks.Domain
 {
-    public class FieldFilter<T>
+    public class FieldFilter
     {
         public string Name { get; private set; }
-        public T Value { get; private set; }
-        public FieldFilter(string name, T value)
+        public string Value { get; private set; }
+        public FieldFilter(string name, string value)
         {
             Name = name;
             Value = value;

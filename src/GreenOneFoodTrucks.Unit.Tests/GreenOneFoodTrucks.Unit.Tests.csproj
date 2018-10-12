@@ -4,4 +4,18 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GreenOneFoodTrucks.Common\GreenOneFoodTrucks.Common.csproj" />
+    <ProjectReference Include="..\GreenOneFoodTrucks.Domain\GreenOneFoodTrucks.Domain.csproj" />
+    <ProjectReference Include="..\GreenOneFoodTrucks.Services\GreenOneFoodTrucks.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentAssertions" Version="4.19.4" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="2.1.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="4.19.4" />
+    <PackageReference Include="NUnit" Version="3.9.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.9.0" />
+  </ItemGroup>
+
 </Project>
