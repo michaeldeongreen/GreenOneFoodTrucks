@@ -25,14 +25,14 @@ namespace GreenOneFoodTrucks.Web.Api
             services.AddCors();
             services.AddLogging();
 
+            services.IncludeRegistry<CommonRegistry>();
+            services.IncludeRegistry<ServicesRegistry>();
+            services.IncludeRegistry<DefaultRegistry>();
+
             services.Scan(s =>
             {
                 s.TheCallingAssembly();
                 s.WithDefaultConventions();
-                s.AssemblyContainingType<CommonRegistry>();
-                s.AssemblyContainingType<ServicesRegistry>();
-                s.AssemblyContainingType<DefaultRegistry>();
-                s.AddAllTypesOf<IQueryBuilder>();
             });
         }
 
