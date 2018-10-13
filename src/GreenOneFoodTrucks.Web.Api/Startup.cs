@@ -5,7 +5,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Lamar;
 using GreenOneFoodTrucks.Common;
 using GreenOneFoodTrucks.Services;
-using GreenOneFoodTrucks.Services.Interfaces;
 
 namespace GreenOneFoodTrucks.Web.Api
 {
