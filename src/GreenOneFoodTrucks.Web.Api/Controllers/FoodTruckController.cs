@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using GreenOneFoodTrucks.Services.Interfaces;
 using GreenOneFoodTrucks.Domain;
 
@@ -15,8 +14,8 @@ namespace GreenOneFoodTrucks.Web.Api.Controllers
         }
 
         [HttpGet]
-        [Route("api/foodtrucks/latitude/{latitude}/longitude/{longitude}")]
-        public ActionResult Get(double latitude, double longitude)
+        [Route("api/[controller]")]
+        public ActionResult Get([FromQuery]double latitude, [FromQuery]double longitude)
         {
             try
             {
